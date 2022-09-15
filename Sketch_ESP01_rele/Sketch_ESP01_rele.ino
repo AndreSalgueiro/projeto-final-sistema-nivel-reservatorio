@@ -1,17 +1,17 @@
-// Inclusão de biblioteca
+// Inclusao de biblioteca
 #include "config.h"
 //Instanciando Objetos
 AdafruitIO_Feed *bomba = io.feed("bombaIO");
-//Declaração de constantes
-#define PIN_RELE 0
-//Declaração de variável
+//Declaracao de constantes
+#define GPIO_RELE 0
+//Declaracao de variavel
 unsigned int statusBomba = 0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(PIN_RELE, OUTPUT);  
+  pinMode(GPIO_RELE, OUTPUT);  
   io.connect();
-  bomba->onMessage(mensagemRecebidaBomba);//se está recendo dados do portal Adafruit
+  bomba->onMessage(mensagemRecebidaBomba);//se esta recendo dados do portal Adafruit
   while (io.status() < AIO_CONNECTED) {
     Serial.print(".");
     delay(500); 
@@ -22,8 +22,8 @@ void setup() {
 void loop() { 
   io.run(); 
 }
-//Implemento de funções
+//Implemento de funcoes
 void mensagemRecebidaBomba(AdafruitIO_Data *data) {
   statusBomba = data->toInt();
-  digitalWrite(PIN_RELE, statusBomba); 
+  digitalWrite(GPIO_RELE, statusBomba); 
 }

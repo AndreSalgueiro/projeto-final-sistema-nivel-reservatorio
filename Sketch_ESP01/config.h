@@ -1,5 +1,5 @@
 //Adafruit IO Config
-#define IO_USERNAME  "<usuário Adafruit IO>"
+#define IO_USERNAME  "<usuario Adafruit IO>"
 #define IO_KEY       "<chave Adafruit IO>"
 
 //WIFI
