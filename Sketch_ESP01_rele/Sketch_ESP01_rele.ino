@@ -22,7 +22,7 @@ void setup() {
 void loop() { 
   io.run(); 
 }
-//Implemento de funcoes
+//Implemento de funcao
 void mensagemRecebidaBomba(AdafruitIO_Data *data) {
   statusBomba = data->toInt();
   digitalWrite(GPIO_RELE, statusBomba); 
